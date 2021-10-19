@@ -1,0 +1,252 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", "Sans serif";
+}
+body a:link {
+  text-decoration: none;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+.header__logo__content {
+  box-shadow: 1px 1px 12px #555;
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+}
+.header__logo__content .header__logo {
+  padding: 0.3em;
+  width: 45%;
+  max-width: 450px;
+}
+
+.header__location {
+  display: flex;
+  justify-content: center;
+  padding-right: 25px;
+  background: #eaeaea;
+}
+.header__location .header__location__maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 25px;
+  font-size: 1.3em;
+}
+
+.header__location__txt {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/*------------------------------------*\
+  #ASIDE
+\*------------------------------------*/
+aside {
+  display: flex;
+}
+@media only screen and (max-width: 1080px) {
+  aside {
+    flex-direction: column;
+  }
+}
+
+.aside__discovery {
+  width: 50%;
+  background: #f6f6f6;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+@media only screen and (max-width: 1080px) {
+  .aside__discovery {
+    width: 100%;
+  }
+}
+.aside__discovery h2 {
+  width: 90%;
+  font-size: 1.5em;
+  margin: auto;
+}
+.aside__discovery .btn {
+  padding: 1px;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 60%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 1px 1px 12px #555;
+  background: linear-gradient(#e871da, #9c59dc);
+}
+
+.navigation {
+  width: 50%;
+}
+@media only screen and (max-width: 1080px) {
+  .navigation {
+    width: 100%;
+  }
+}
+.navigation h2 {
+  text-align: start;
+  padding-left: 15px;
+}
+
+.navigation__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation__liste {
+  background-color: #f6f6f6;
+  display: flex;
+  border-radius: 20px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-left: 35px;
+  box-shadow: 1px 1px 12px #555;
+}
+@media only screen and (max-width: 1080px) {
+  .navigation__liste {
+    margin-bottom: 30px;
+  }
+}
+.navigation__liste .fas {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: black;
+}
+.navigation__liste .navigation__list_txt {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-left: 15%;
+  color: black;
+}
+
+.number {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 11px;
+  background: #9356c8;
+  border-radius: 150px;
+  margin-left: -2%;
+  margin-right: 10%;
+  color: white;
+  font-size: 1.3em;
+}
+
+/*------------------------------------*\
+  #SECTION
+\*------------------------------------*/
+.restaurant h2 {
+  text-align: start;
+  padding-left: 15px;
+}
+
+.restaurant__card_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.restaurant__card__heart {
+  margin-top: -200px;
+  padding-top: 30px;
+}
+.restaurant__card__heart p {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 140px;
+  background: #99e2d0;
+  color: #008766;
+}
+
+.restaurant__card {
+  margin: auto;
+  margin-bottom: 35px;
+  width: 40%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 12px #555;
+}
+@media only screen and (max-width: 1080px) {
+  .restaurant__card {
+    width: 90%;
+  }
+}
+.restaurant__card img {
+  width: 100%;
+  height: 70%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.bloctxt {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+.bloctxt h3 {
+  margin-bottom: -15px;
+}
+.bloctxt p {
+  font-size: 1.1em;
+}
+.bloctxt .far {
+  font-size: 2em;
+  height: 100%;
+}
+.bloctxt .fa-heart {
+  padding: 0.2em;
+}
+.bloctxt .fa-heart::before {
+  content: "\f004";
+  transition: color 400ms ease-out;
+}
+.bloctxt .fa-heart:hover::before {
+  font-weight: bold;
+  color: #9c59dc;
+  cursor: pointer;
+}
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.footer {
+  background: #353535;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 35px;
+}
+.footer li {
+  list-style: none;
+}
+.footer .footer__list__containe {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.footer .footer__list__containe p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.footer .footer__list__containe .fas {
+  font-size: 10px;
+  padding-right: 5px;
+}
+.footer .footer__list__container {
+  padding-left: 0px;
+}
+
+/*# sourceMappingURL=accueil.css.map */
