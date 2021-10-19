@@ -8,6 +8,9 @@ body a:link {
   text-decoration: none;
 }
 
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
 .header {
   display: flex;
   justify-content: space-around;
@@ -39,33 +42,33 @@ figure {
   width: 100%;
   margin: 0px;
 }
-
-.figure__img {
+figure .figure__img {
   width: 100%;
   max-height: 32rem;
   object-fit: cover;
 }
 
-.menu {
+/*------------------------------------*\
+  #MENU
+\*------------------------------------*/
+.section__menu {
   position: relative;
   bottom: 80px;
   width: 85%;
-  z-index: 1;
   margin: auto;
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
-  pading-left: 15px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
   background-color: #f6f6f6;
   margin-bottom: -80px;
   padding-bottom: 55px;
   padding-top: 35px;
 }
 @media only screen and (max-width: 1080px) {
-  .menu {
+  .section__menu {
     width: 100%;
   }
 }
-.menu h3 {
+.section__menu h3 {
   border-bottom: 2px solid #99e2d0;
   width: 5%;
   font-weight: normal;
@@ -74,21 +77,6 @@ figure {
   margin-bottom: 30px;
 }
 
-.grope {
-  display: flex;
-}
-@media only screen and (max-width: 1080px) {
-  .grope {
-    flex-direction: column;
-  }
-}
-
-.menu__card__grope {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 0px;
-}
 .menu__header {
   display: flex;
   justify-content: space-around;
@@ -115,6 +103,28 @@ figure {
   cursor: pointer;
 }
 
+.menu__card__container {
+  display: flex;
+}
+@media only screen and (max-width: 1080px) {
+  .menu__card__container {
+    flex-direction: column;
+  }
+}
+.menu__card__container .menu__card__grope {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+@media only screen and (max-width: 1080px) {
+  .menu__card__container .menu__card__grope {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+}
+
 .menu__card {
   width: 90%;
   margin: auto;
@@ -127,6 +137,10 @@ figure {
   color: black;
   padding-left: 15px;
   padding-right: 15px;
+}
+.menu__card .menu__card__price {
+  position: relative;
+  top: 20px;
 }
 
 .menu__card__titledescritption {
@@ -148,6 +162,9 @@ figure {
   background: linear-gradient(#e871da, #9c59dc);
 }
 
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
 .footer {
   background: #353535;
   color: white;
@@ -158,21 +175,21 @@ figure {
 .footer li {
   list-style: none;
 }
-.footer .footer__list__containe {
+.footer .footer__list__container {
+  padding-left: 0px;
+}
+.footer .footer__list__container .footer__list__txt {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
-.footer .footer__list__containe p {
+.footer .footer__list__container .footer__list__txt p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.footer .footer__list__containe .fas {
+.footer .footer__list__container .footer__list__txt .fas {
   font-size: 10px;
   padding-right: 5px;
-}
-.footer .footer__list__container {
-  padding-left: 0px;
 }
 
 /*# sourceMappingURL=menupage.css.map */
