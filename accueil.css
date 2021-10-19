@@ -114,6 +114,8 @@ aside {
 }
 @media only screen and (max-width: 1080px) {
   .navigation__liste {
+    margin: auto;
+    margin-left: 0px;
     margin-bottom: 30px;
   }
 }
@@ -232,21 +234,21 @@ aside {
 .footer li {
   list-style: none;
 }
-.footer .footer__list__containe {
+.footer .footer__list__container {
+  padding-left: 0px;
+}
+.footer .footer__list__container .footer__list__txt {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
-.footer .footer__list__containe p {
+.footer .footer__list__container .footer__list__txt p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.footer .footer__list__containe .fas {
+.footer .footer__list__container .footer__list__txt .fas {
   font-size: 10px;
   padding-right: 5px;
-}
-.footer .footer__list__container {
-  padding-left: 0px;
 }
 
 /*# sourceMappingURL=accueil.css.map */
