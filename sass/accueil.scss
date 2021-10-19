@@ -114,6 +114,8 @@ aside{
     margin-left: 35px;
     box-shadow: $shadow;
     @media #{$medium-down}{
+        margin: auto;
+        margin-left: 0px;
         margin-bottom: 30px;
     }
     .fas{
@@ -238,20 +240,22 @@ aside{
         list-style: none;
 
     }
-    .footer__list__containe{
-       display: flex;
-       align-items: center;
-       margin-bottom: 15px;
-       p{
-        margin-top: 0px;
-        margin-bottom: 0px;
-       }
-       .fas{
-           font-size: 10px;
-           padding-right: 5px;
-       }
-    }
     .footer__list__container{
         padding-left: 0px;
+        .footer__list__txt{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            p{
+             margin-top: 0px;
+             margin-bottom: 0px;
+            }
+            .fas{
+                font-size: 10px;
+                padding-right: 5px;
+            }
+         }
     }
+ 
+
 }

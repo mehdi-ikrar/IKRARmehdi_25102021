@@ -1,8 +1,9 @@
 @import "responsive.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 $primary: rgb(246, 246, 246);
-$padding: 15px;
 $secondary: rgb(153, 226, 208);
+$heart: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
+$padding: 15px;
 $shadow: 1px 1px 12px #555;
 
 
@@ -15,6 +16,10 @@ body{
         text-decoration:none; 
     } 
 }
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
 .header{
     display: flex;
     justify-content: space-around;
@@ -45,21 +50,26 @@ body{
 figure{
     width: 100%;
     margin:0px ;
+    .figure__img{
+        width: 100%;
+        max-height: 32rem;
+        object-fit: cover;            
+    }
 }
-.figure__img{
-    width: 100%;
-    max-height: 32rem;
-    object-fit: cover;            
-}
-.menu{
+
+
+/*------------------------------------*\
+  #MENU
+\*------------------------------------*/
+
+
+.section__menu{
     position: relative;
     bottom: 80px;
     width: 85%;
-    z-index: 1;
     margin: auto;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    pading-left: $padding;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     background-color:$primary;
     margin-bottom: -80px;
     padding-bottom: 55px;
@@ -77,25 +87,7 @@ figure{
     }
 
 }
-.grope{
-    display: flex;
-    @media #{$medium-down} {
-        flex-direction: column;
-    }
 
-}
-.menu__card__grope{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 0px;
-    @media #{$medium-down} {
-
-        
-    }
-
-    
-}
 .menu__header{
     display: flex;
     justify-content: space-around;
@@ -120,6 +112,26 @@ figure{
         }
     }
 }
+
+.menu__card__container{
+    display: flex;
+    @media #{$medium-down} {
+        flex-direction: column;
+    }
+    .menu__card__grope {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        @media #{$medium-down}  {  
+            margin: 0px;        
+            display: flex;
+            flex-direction: column;
+            margin-top: 0px;
+        }
+    }
+}
+
+
 .menu__card{
     width: 90%;
     margin: auto;
@@ -132,7 +144,17 @@ figure{
     color: black;
     padding-left: 15px;
     padding-right: 15px;
+    @media #{$medium-down} {
+
+    }
+    .menu__card__price {
+        position: relative;
+        top: 20px
+    }
+    
 }
+
+
 
 .menu__card__titledescritption{
     font-weight: bold;
@@ -149,9 +171,15 @@ figure{
     padding-left: 15px;
     padding-right: 15px;
     box-shadow: $shadow;
-    background: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
+    background: $heart;
     
 }
+
+
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
 
 .footer{
     background: rgb(53, 53, 53);
@@ -165,20 +193,22 @@ figure{
         list-style: none;
 
     }
-    .footer__list__containe{
-       display: flex;
-       align-items: center;
-       margin-bottom: 15px;
-       p{
-        margin-top: 0px;
-        margin-bottom: 0px;
-       }
-       .fas{
-           font-size: 10px;
-           padding-right: 5px;
-       }
-    }
     .footer__list__container{
         padding-left: 0px;
+        .footer__list__txt{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            p{
+             margin-top: 0px;
+             margin-bottom: 0px;
+            }
+            .fas{
+                font-size: 10px;
+                padding-right: 5px;
+            }
+         }
     }
+ 
+
 }
