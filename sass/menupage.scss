@@ -4,9 +4,23 @@ $primary: rgb(246, 246, 246);
 $secondary: rgb(153, 226, 208);
 $heart: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
 $padding: 15px;
-$shadow: 1px 1px 12px #555;
-
-
+$shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+@keyframes slide {
+    0% {
+        transform: translateX(-150px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes itemAppear {
+    0% {
+      transform: scale(0)
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 body{
     font-family: "Roboto", "Sans serif";
@@ -19,34 +33,35 @@ body{
 /*------------------------------------*\
   #HEADER
 \*------------------------------------*/
-
-.header{
+header{
     display: flex;
-    justify-content: space-around;
-    .fas{
-        font-size: 2.5em;
-        color: black;
-        margin-top: 30px;
-        @media #{$medium-down} {
-            font-size: 1.3em;
-            display: flex;
-            margin-top: 10px;
-            color: black;
-
-        }
-    }
-    h1{
+    .header__logo__content{
+        box-shadow: $shadow;
         margin: 0px;
-        margin-right: 100px;
-        width: 40%;
-        img{
+        text-align: center;
+        width: 100%;
+        .header__logo{
             padding: 0.3em;
-            width: 70%;
+            width: 45%;
+            max-width: 450px;
         }
+    
+    }
+    a{
+
+    }
+    .fa-arrow-left{
+        display: none;
+        @media #{$medium-down} {
+            display: inline;
+            font-size: 2.5em;
+            color: black;
+        }   
     }
     
-}
 
+    
+}
 figure{
     width: 100%;
     margin:0px ;
@@ -57,16 +72,14 @@ figure{
     }
 }
 
-
 /*------------------------------------*\
   #MENU
 \*------------------------------------*/
 
-
 .section__menu{
     position: relative;
     bottom: 80px;
-    width: 85%;
+    width: 80%;
     margin: auto;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -90,17 +103,12 @@ figure{
 
 .menu__header{
     display: flex;
-    justify-content: space-around;
-    @media #{$medium-down} {
-        padding: 15px;
-        
-    }
-    .far{
+    justify-content: space-between;
+    padding-left: $padding;
+    padding-right: $padding;
+    .fa-heart {     
         align-self: center;
-        font-size: 2em;
-    }
-    .fa-heart {            
-        padding:.2em;
+        font-size: 2.5em;       
         &::before {
             content: "\f004";
             transition: color 400ms ease-out;
@@ -115,12 +123,17 @@ figure{
 
 .menu__card__container{
     display: flex;
+    height: 500px;
+
     @media #{$medium-down} {
         flex-direction: column;
+        height: 100%;
     }
     .menu__card__grope {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
         margin: auto;
         @media #{$medium-down}  {  
             margin: 0px;        
@@ -130,10 +143,14 @@ figure{
         }
     }
 }
+.menu__title {
+    font-size: 2.1em;
+    font-family:Shrikhand,"cursive";
+}
 
 
 .menu__card{
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 30px;
     background-color: white;
@@ -144,21 +161,27 @@ figure{
     color: black;
     padding-left: 15px;
     padding-right: 15px;
+    text-overflow: ellipsis;
+    animation: itemAppear 1s;
     @media #{$medium-down} {
-
+        width: 87%;
     }
     .menu__card__price {
         position: relative;
-        top: 20px
+        top: 20px;
+        font-size: 0.9em;
+        font-weight: bold;
     }
-    
 }
-
-
 
 .menu__card__titledescritption{
     font-weight: bold;
-    margin-bottom: -15px;        
+    margin-bottom: -15px;
+    font-size: 0.9em;
+    padding-bottom: 10px;        
+}
+.menu__card__subdescritption{
+    font-size: 0.7em;
 }
 .btn{
     font-size: 1.3em;
@@ -172,11 +195,13 @@ figure{
     padding-right: 15px;
     box-shadow: $shadow;
     background: $heart;
+    transform: scale(1);
+    transition: transform 400ms;
+    &:hover {
+        transform: scale(1.1);
+    } 
     
 }
-
-
-
 /*------------------------------------*\
   #FOOTER
 \*------------------------------------*/
@@ -187,11 +212,8 @@ figure{
     padding-bottom: 20px;
     padding-top: 20px;
     padding-left: $padding +20px;
-    h3{
-    }
     li{
         list-style: none;
-
     }
     .footer__list__container{
         padding-left: 0px;
@@ -210,5 +232,6 @@ figure{
          }
     }
  
-
 }
+
+
