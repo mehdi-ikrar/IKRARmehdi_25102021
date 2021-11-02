@@ -2,6 +2,7 @@ $primary: rgb(246, 246, 246);
 $secondary: rgb(153, 226, 208);
 $padding: 15px;
 $shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+$heart: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
 @import "responsive.scss";
 body{
     margin: 0px;
@@ -32,7 +33,7 @@ body{
     }
 } 
 
-.loader {
+loader {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -131,22 +132,27 @@ aside{
         width: 100%;
     }
     h2{
-    width: 90%;
-    font-size: 1.5em;
-    margin: auto;
+        width: 90%;
+        font-size: 1.5em;
+        margin: auto;
     }
     .btn{
+        font-size: 1.3em;
         padding: 1px;
         color: white;
         border-radius: 50px;
         text-align: center;
         margin: auto;
-        margin-top: 50px;
-        width: 60%;
+        width: 40%;
         padding-left: 15px;
         padding-right: 15px;
         box-shadow: $shadow;
-        background: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
+        background: $heart;
+        transform: scale(1);
+        transition: transform 400ms;
+        &:hover {
+            transform: scale(1.1);
+        } 
     }
 }
 
@@ -176,6 +182,12 @@ aside{
     margin-bottom: 20px;
     margin-left: 35px;
     box-shadow: $shadow;
+    &:hover{
+        background: rgb(147, 86, 200, 20%);
+    }
+    &:hover > .fas{
+        color: rgb(147, 86, 200,);
+    }
     @media #{$medium-down}{
         margin: auto;
         margin-left: 0px;
@@ -198,14 +210,17 @@ aside{
 
 .number{
     padding: 5px;
-    padding-left: 10px;
-    padding-right: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background:rgb(147, 86, 200);
-    border-radius: 150px;
+    border-radius: 50px;
     margin-left: -2%;
     margin-right: 10%;
     color: white;
     font-size: 1.3em;
+    height: 25px;
+    width: 25px;
 }
 
 
@@ -234,6 +249,11 @@ aside{
         margin-bottom: 140px;
         background: rgb(153, 226, 208);
         color: rgb(0, 135, 102);
+        transform: scale(1);
+        transition: transform 300ms;
+        &:hover {
+            transform: scale(1.2);
+        } 
     }
 }
 
@@ -313,8 +333,10 @@ aside{
                 font-size: 10px;
                 padding-right: 5px;
             }
-         }
+        }
     }
  
 }
+
+
 

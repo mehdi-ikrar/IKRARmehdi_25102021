@@ -5,14 +5,36 @@ $secondary: rgb(153, 226, 208);
 $heart: linear-gradient(rgb(232, 113, 218), rgb(156, 89, 220));
 $padding: 15px;
 $shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+@keyframes appear {
+    0% {
+        width: 0%;
+        
+    }
+    100% {
+        width: 100%;
+    }
+}
 @keyframes slide {
     0% {
-        transform: translateX(-150px);
+        transform: translateX(50px);   
     }
     100% {
         transform: translateX(0px);
     }
 }
+@keyframes rotation {
+    0%{
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }   
+    100%{
+        transform: rotate(0deg) ;
+    }
+}
+
 @keyframes itemAppear {
     0% {
       transform: scale(0)
@@ -46,9 +68,6 @@ header{
             max-width: 450px;
         }
     
-    }
-    a{
-
     }
     .fa-arrow-left{
         display: none;
@@ -150,7 +169,8 @@ figure{
 
 
 .menu__card{
-    width: 100%;
+    width: 300px;
+    max-height: 70px;
     margin: auto;
     margin-bottom: 30px;
     background-color: white;
@@ -161,27 +181,68 @@ figure{
     color: black;
     padding-left: 15px;
     padding-right: 15px;
-    text-overflow: ellipsis;
-    animation: itemAppear 1s;
+    &:hover > .pricecheck > .menu__card__check {
+        display: flex;
+    }
+    &:hover > .pricecheck > .menu__card__price  {
+        animation: slide 0.5s;
+        position: relative;
+        right: 50px;
+    }
     @media #{$medium-down} {
         width: 87%;
     }
     .menu__card__price {
-        position: relative;
-        top: 20px;
+        display: flex;
         font-size: 0.9em;
         font-weight: bold;
+        align-items:flex-end;
+        height: 100%;
+        margin-top: 0px;
+    }
+}
+.pricecheck{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.animation1  {
+    animation: itemAppear 1s;
+}
+.animation2 {
+    animation: itemAppear 2s;
+}
+.animation3 {
+    animation: itemAppear 2.5s;
+}
+.menu__card__check{
+    background-color: rgb(153, 226, 208);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: -40px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    animation: appear 0.5s;
+    display: none;
+    .fa-check-circle {
+        color: white;
+        font-size: 1.8em;
+        animation:  rotation 0.8s;
     }
 }
 
 .menu__card__titledescritption{
+    overflow: hidden;
+    text-overflow: ellipsis; 
     font-weight: bold;
     margin-bottom: -15px;
-    font-size: 0.9em;
-    padding-bottom: 10px;        
+    font-size: 1em;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 .menu__card__subdescritption{
-    font-size: 0.7em;
+    font-size: 0.8em;
+    overflow: hidden;
 }
 .btn{
     font-size: 1.3em;
