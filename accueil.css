@@ -1,12 +1,40 @@
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Roboto", "Sans serif";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+@keyframes appear {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
-body a:link {
-  text-decoration: none;
+@keyframes slide {
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
-
+@keyframes rotation {
+  0% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes loader {
   100% {
     opacity: 0;
@@ -27,6 +55,15 @@ body a:link {
     transform: translateY(0);
   }
 }
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", "Sans serif";
+}
+body a:link {
+  text-decoration: none;
+}
+
 loader {
   position: fixed;
   height: 100%;
@@ -64,6 +101,16 @@ loader__item--2 {
 loader__item--3 {
   background-color: #9c59dc;
   animation-delay: 0.5s;
+}
+
+figure {
+  width: 100%;
+  margin: 0px;
+}
+figure .figure__img {
+  width: 100%;
+  max-height: 32rem;
+  object-fit: cover;
 }
 
 /*------------------------------------*\
@@ -129,7 +176,8 @@ aside {
   font-size: 1.5em;
   margin: auto;
 }
-.aside__discovery .btn {
+
+.btn {
   font-size: 1.3em;
   padding: 1px;
   color: white;
@@ -144,7 +192,7 @@ aside {
   transform: scale(1);
   transition: transform 400ms;
 }
-.aside__discovery .btn:hover {
+.btn:hover {
   transform: scale(1.1);
 }
 
@@ -229,6 +277,9 @@ aside {
   display: flex;
   flex-wrap: wrap;
 }
+.restaurant__card_content:hover > .restaurant__card > .bloctxt > .restaurant__card__heart > p {
+  transform: scale(1.2);
+}
 
 .restaurant__card__heart {
   margin-top: -200px;
@@ -243,9 +294,6 @@ aside {
   color: #008766;
   transform: scale(1);
   transition: transform 300ms;
-}
-.restaurant__card__heart p:hover {
-  transform: scale(1.2);
 }
 
 .restaurant__card {
@@ -297,6 +345,168 @@ aside {
   font-weight: bold;
   color: #9c59dc;
   cursor: pointer;
+}
+
+.section__menu {
+  position: relative;
+  bottom: 80px;
+  width: 80%;
+  margin: auto;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #f6f6f6;
+  margin-bottom: -80px;
+  padding-bottom: 55px;
+  padding-top: 35px;
+}
+@media only screen and (max-width: 1200px) {
+  .section__menu {
+    width: 100%;
+  }
+}
+.section__menu h3 {
+  border-bottom: 2px solid #99e2d0;
+  width: 5%;
+  font-weight: normal;
+  margin-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.menu__header .fa-heart {
+  align-self: center;
+  font-size: 2.5em;
+}
+.menu__header .fa-heart::before {
+  content: "\f004";
+  transition: color 400ms ease-out;
+}
+.menu__header .fa-heart:hover::before {
+  font-weight: bold;
+  color: #9c59dc;
+  cursor: pointer;
+}
+
+.menu__card__container {
+  display: flex;
+  height: 500px;
+}
+@media only screen and (max-width: 1200px) {
+  .menu__card__container {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+.menu__card__container .menu__card__grope {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin: auto;
+}
+@media only screen and (max-width: 1200px) {
+  .menu__card__container .menu__card__grope {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+}
+
+.menu__title {
+  font-size: 2.1em;
+  font-family: Shrikhand, "cursive";
+}
+
+.menu__card {
+  width: 300px;
+  max-height: 70px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.menu__card:hover > .pricecheck > .menu__card__check {
+  display: flex;
+}
+.menu__card:hover > .pricecheck > .menu__card__price {
+  animation: slide 0.5s;
+  position: relative;
+  right: 50px;
+}
+@media only screen and (max-width: 1200px) {
+  .menu__card {
+    width: 87%;
+  }
+}
+.menu__card .menu__card__price {
+  display: flex;
+  font-size: 0.9em;
+  font-weight: bold;
+  align-items: flex-end;
+  height: 100%;
+  margin-top: 0px;
+}
+
+.pricecheck {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.animation1 {
+  animation: itemAppear 1s;
+}
+
+.animation2 {
+  animation: itemAppear 2s;
+}
+
+.animation3 {
+  animation: itemAppear 2.5s;
+}
+
+.menu__card__check {
+  background-color: #99e2d0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-right: -40px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  animation: appear 0.5s;
+  display: none;
+}
+.menu__card__check .fa-check-circle {
+  color: white;
+  font-size: 1.8em;
+  animation: rotation 0.8s;
+}
+
+.menu__card__titledescritption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  margin-bottom: -15px;
+  font-size: 1em;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.menu__card__subdescritption {
+  font-size: 0.8em;
+  overflow: hidden;
 }
 
 /*------------------------------------*\
