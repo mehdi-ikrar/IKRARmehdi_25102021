@@ -55,6 +55,14 @@
     transform: translateY(0);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -64,7 +72,7 @@ body a:link {
   text-decoration: none;
 }
 
-loader {
+.loader {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -79,26 +87,26 @@ loader {
   align-items: center;
   justify-content: center;
 }
-loader__item {
+.loader__item {
   height: 1rem;
   width: 1rem;
   border-radius: 1rem;
   animation: jump 1s;
   animation-iteration-count: 1;
 }
-loader__itemContainer {
+.loader__itemContainer {
   display: flex;
   width: 5rem;
   justify-content: space-between;
 }
-loader__item--1 {
+.loader__item--1 {
   background-color: #99e2d0;
 }
-loader__item--2 {
+.loader__item--2 {
   background-color: red;
   animation-delay: 0.25s;
 }
-loader__item--3 {
+.loader__item--3 {
   background-color: #9c59dc;
   animation-delay: 0.5s;
 }
@@ -285,7 +293,7 @@ aside {
   margin-top: -200px;
   padding-top: 30px;
 }
-.restaurant__card__heart p {
+.restaurant__card__heart .menu__card__news {
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -303,6 +311,9 @@ aside {
   height: 250px;
   border-radius: 10px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+}
+.restaurant__card:hover > .menu__card__news {
+  animation: bounce 1s;
 }
 @media only screen and (max-width: 1200px) {
   .restaurant__card {
@@ -442,7 +453,7 @@ aside {
   display: flex;
 }
 .menu__card:hover > .pricecheck > .menu__card__price {
-  animation: slide 0.5s;
+  animation: slide 0.3s;
   position: relative;
   right: 50px;
 }
@@ -485,13 +496,13 @@ aside {
   display: flex;
   align-items: center;
   padding: 15px;
-  animation: appear 0.5s;
+  animation: appear 0.6s;
   display: none;
 }
 .menu__card__check .fa-check-circle {
   color: white;
   font-size: 1.8em;
-  animation: rotation 0.8s;
+  animation: rotation 0.5s;
 }
 
 .menu__card__titledescritption {
