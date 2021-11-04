@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 @keyframes appear {
   0% {
-    width: 0%;
+    width: 0px;
   }
   100% {
-    width: 100%;
+    width: 28.5px;
   }
 }
 @keyframes slide {
   0% {
-    transform: translateX(50px);
+    transform: translateX(0px);
   }
   100% {
-    transform: translateX(0px);
+    transform: translateX(5px);
   }
 }
 @keyframes rotation {
@@ -63,6 +63,17 @@
     transform: scale(1.5);
   }
 }
+@keyframes jump {
+  0% {
+    margin-left: 5px;
+  }
+  50% {
+    margin-left: 10px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -78,9 +89,9 @@ body a:link {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(232, 113, 218, 0.5);
   animation: loader 0.01s;
-  animation-delay: 1.75s;
+  animation-delay: 1.6s;
   animation-fill-mode: both;
   z-index: 10000;
   display: flex;
@@ -88,11 +99,16 @@ body a:link {
   justify-content: center;
 }
 .loader__item {
-  height: 1rem;
-  width: 1rem;
-  border-radius: 1rem;
-  animation: jump 1s;
+  border-radius: 50px;
+  animation: jump 1.6s;
   animation-iteration-count: 1;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
+  font-family: Shrikhand, "cursive";
+  position: relative;
+  right: 500px;
+  padding: 30px;
 }
 .loader__itemContainer {
   display: flex;
@@ -101,14 +117,52 @@ body a:link {
 }
 .loader__item--1 {
   background-color: #99e2d0;
+  color: black;
 }
 .loader__item--2 {
-  background-color: red;
-  animation-delay: 0.25s;
+  background-color: #99e2d0;
+  color: black;
 }
 .loader__item--3 {
   background-color: #9c59dc;
-  animation-delay: 0.5s;
+}
+.loader__item--4 {
+  background-color: #9c59dc;
+}
+.loader__item--5 {
+  background-color: #9c59dc;
+}
+.loader__item--6 {
+  background-color: #9c59dc;
+}
+.loader__item--7 {
+  background-color: #9c59dc;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+.header__menu {
+  display: flex;
+}
+.header__menu .header__arrow {
+  height: 100%;
+  color: black;
+  display: none;
+}
+@media only screen and (max-width: 1200px) {
+  .header__menu .header__arrow {
+    display: flex;
+  }
+}
+.header__menu .header__arrow .fas {
+  font-size: 1.5em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+  position: relative;
+  left: 50px;
 }
 
 figure {
@@ -121,9 +175,6 @@ figure .figure__img {
   object-fit: cover;
 }
 
-/*------------------------------------*\
-  #HEADER
-\*------------------------------------*/
 .header__logo__content {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   margin: 0px;
@@ -141,17 +192,23 @@ figure .figure__img {
   justify-content: center;
   padding-right: 25px;
   background: #eaeaea;
+  padding: 15px;
+}
+.header__location input {
+  background: white;
+  background: #eaeaea;
+  border: 0px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.header__location input::placeholder {
+  color: black;
 }
 .header__location .header__location__maps {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-right: 25px;
-  font-size: 1.3em;
-}
-
-.header__location__txt {
-  font-weight: bold;
   font-size: 1.3em;
 }
 
@@ -166,8 +223,7 @@ aside {
     flex-direction: column;
   }
 }
-
-.aside__discovery {
+aside .aside__discovery {
   width: 50%;
   background: #f6f6f6;
   padding-top: 50px;
@@ -175,11 +231,11 @@ aside {
   text-align: center;
 }
 @media only screen and (max-width: 1200px) {
-  .aside__discovery {
+  aside .aside__discovery {
     width: 100%;
   }
 }
-.aside__discovery h2 {
+aside .aside__discovery h2 {
   width: 90%;
   font-size: 1.5em;
   margin: auto;
@@ -221,8 +277,7 @@ aside {
   display: flex;
   flex-direction: column;
 }
-
-.navigation__liste {
+.navigation__content .navigation__liste {
   background-color: #f6f6f6;
   display: flex;
   border-radius: 20px;
@@ -232,33 +287,32 @@ aside {
   margin-left: 35px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
 }
-.navigation__liste:hover {
+.navigation__content .navigation__liste:hover {
   background: rgba(147, 86, 200, 0.2);
 }
-.navigation__liste:hover > .fas {
+.navigation__content .navigation__liste:hover > .fas {
   color: #9356c8;
 }
 @media only screen and (max-width: 1200px) {
-  .navigation__liste {
+  .navigation__content .navigation__liste {
     margin: auto;
     margin-left: 0px;
     margin-bottom: 30px;
   }
 }
-.navigation__liste .fas {
+.navigation__content .navigation__liste .fas {
   display: flex;
   align-items: center;
   font-size: 30px;
   color: black;
 }
-.navigation__liste .navigation__list_txt {
+.navigation__content .navigation__liste .navigation__list_txt {
   font-weight: bold;
   font-size: 1.4em;
   margin-left: 15%;
   color: black;
 }
-
-.number {
+.navigation__content .navigation__liste .number {
   padding: 5px;
   display: flex;
   align-items: center;
@@ -274,9 +328,9 @@ aside {
 }
 
 /*------------------------------------*\
-  #SECTION
+  #SECTION RESTAURANT
 \*------------------------------------*/
-.restaurant h2 {
+.section__restaurant h2 {
   text-align: start;
   padding-left: 15px;
 }
@@ -284,24 +338,6 @@ aside {
 .restaurant__card_content {
   display: flex;
   flex-wrap: wrap;
-}
-.restaurant__card_content:hover > .restaurant__card > .bloctxt > .restaurant__card__heart > p {
-  transform: scale(1.2);
-}
-
-.restaurant__card__heart {
-  margin-top: -200px;
-  padding-top: 30px;
-}
-.restaurant__card__heart .menu__card__news {
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 140px;
-  background: #99e2d0;
-  color: #008766;
-  transform: scale(1);
-  transition: transform 300ms;
 }
 
 .restaurant__card {
@@ -341,23 +377,35 @@ aside {
 .bloctxt p {
   font-size: 1.1em;
 }
-.bloctxt .far {
+.bloctxt .restaurant__card__heart {
+  margin-top: -200px;
+  padding-top: 30px;
+}
+.bloctxt .restaurant__card__heart .menu__card__news {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 140px;
+  background: #99e2d0;
+  color: #008766;
+  transform: scale(1);
+  transition: transform 300ms;
+}
+.bloctxt .restaurant__card__heart .fa-heart {
   font-size: 2em;
-  height: 100%;
 }
-.bloctxt .fa-heart {
-  padding: 0.2em;
-}
-.bloctxt .fa-heart::before {
+.bloctxt .restaurant__card__heart .fa-heart::before {
   content: "\f004";
   transition: color 400ms ease-out;
 }
-.bloctxt .fa-heart:hover::before {
+.bloctxt .restaurant__card__heart .fa-heart:hover::before {
   font-weight: bold;
   color: #9c59dc;
-  cursor: pointer;
 }
 
+/*------------------------------------*\
+  #SECTION MENU
+\*------------------------------------*/
 .section__menu {
   position: relative;
   bottom: 80px;
@@ -407,6 +455,7 @@ aside {
 .menu__card__container {
   display: flex;
   height: 500px;
+  margin-bottom: 100px;
 }
 @media only screen and (max-width: 1200px) {
   .menu__card__container {
@@ -415,11 +464,19 @@ aside {
   }
 }
 .menu__card__container .menu__card__grope {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
   margin: auto;
+}
+.menu__card__container .menu__card__grope:nth-child(1) {
+  animation: itemAppear 1s;
+}
+.menu__card__container .menu__card__grope:nth-child(2) {
+  animation: itemAppear 1.5s;
+}
+.menu__card__container .menu__card__grope:nth-child(3) {
+  animation: itemAppear 2s;
 }
 @media only screen and (max-width: 1200px) {
   .menu__card__container .menu__card__grope {
@@ -437,7 +494,7 @@ aside {
 
 .menu__card {
   width: 300px;
-  max-height: 70px;
+  height: 60%;
   margin: auto;
   margin-bottom: 30px;
   background-color: white;
@@ -447,15 +504,9 @@ aside {
   justify-content: space-between;
   color: black;
   padding-left: 15px;
-  padding-right: 15px;
 }
 .menu__card:hover > .pricecheck > .menu__card__check {
   display: flex;
-}
-.menu__card:hover > .pricecheck > .menu__card__price {
-  animation: slide 0.3s;
-  position: relative;
-  right: 50px;
 }
 @media only screen and (max-width: 1200px) {
   .menu__card {
@@ -466,37 +517,24 @@ aside {
   display: flex;
   font-size: 0.9em;
   font-weight: bold;
-  align-items: flex-end;
-  height: 100%;
-  margin-top: 0px;
+  height: 20%;
+  margin: 5px;
+  margin-top: 50px;
+  padding-right: 5px;
 }
 
 .pricecheck {
   display: flex;
-  flex-direction: row-reverse;
-}
-
-.animation1 {
-  animation: itemAppear 1s;
-}
-
-.animation2 {
-  animation: itemAppear 2s;
-}
-
-.animation3 {
-  animation: itemAppear 2.5s;
 }
 
 .menu__card__check {
   background-color: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  margin-right: -40px;
   display: flex;
   align-items: center;
-  padding: 15px;
-  animation: appear 0.6s;
+  padding: 25px;
+  animation: appear 0.5s;
   display: none;
 }
 .menu__card__check .fa-check-circle {
@@ -505,19 +543,22 @@ aside {
   animation: rotation 0.5s;
 }
 
-.menu__card__titledescritption {
+.menu__card__descritption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu__card__descritption .menu__card__titledescritption {
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  margin-bottom: -15px;
   font-size: 1em;
-  padding-bottom: 10px;
-  overflow: hidden;
 }
-
-.menu__card__subdescritption {
-  font-size: 0.8em;
+.menu__card__descritption .menu__card__subdescritption {
+  font-size: 0.75em;
   overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 20px;
 }
 
 /*------------------------------------*\
