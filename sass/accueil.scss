@@ -453,17 +453,17 @@ aside{
         animation:  rotation 0.5s ;
     }
 }
-.menu__card__descritption{
+.menu__card__description{
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: nowrap;
-    .menu__card__titledescritption{
+    .menu__card__titledescription{
         overflow: hidden;
         text-overflow: ellipsis; 
         font-weight: bold;
         font-size: 1em;
     }
-    .menu__card__subdescritption{
+    .menu__card__subdescription{
         font-size: 0.75em;
         overflow: hidden;
         text-overflow: ellipsis; 
