@@ -1,18 +1,17 @@
 @keyframes appear {
     0% {
-        width: 0%;
-        
+        width: 0px;
     }
     100% {
-        width: 100%;
+        width: 28.5px;
     }
 }
 @keyframes slide {
     0% {
-        transform: translateX(50px);   
+        transform: translateX(0px);   
     }
     100% {
-        transform: translateX(0px);
+        transform: translateX(5px);
     }
 }
 @keyframes rotation {
@@ -63,5 +62,16 @@
   }
   100% {
     transform: scale(1.5);
+  }
+}
+@keyframes jump {
+  0% {
+    margin-left: 5px;
+  }
+  50% {
+    margin-left: 10px;
+  }
+  100%{
+    margin-left: 50px;
   }
 }
