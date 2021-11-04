@@ -8,15 +8,12 @@ body{
 }
 
 @mixin btn {
-    font-size: 1.3em;
-    padding: 1px;
+    padding: 10px;
     color: white;
     border-radius: 50px;
     text-align: center;
     margin: auto;
-    width: 40%;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 60%;
     box-shadow: $shadow;
     background: $heart;
     transform: scale(1);

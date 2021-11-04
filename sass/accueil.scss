@@ -18,10 +18,11 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    
+
     &__item {
       border-radius: 50px;
       animation: jump 1.6s;
+      animation-delay: 0.2s;
       animation-iteration-count: 1;
       font-weight: bold;
       font-size: 2em;
@@ -30,6 +31,12 @@
       position: relative;
       right: 500px;
       padding: 30px;
+      @media #{$medium-down}{
+        font-size: 1.2em;
+        padding: 10px;
+        position: relative;
+        right: 140px;
+    }
       
   
       &Container {
@@ -115,7 +122,7 @@ figure{
     width: 100%;
     .header__logo{
         padding: 0.3em;
-        width: 45%;
+        width: 50%;
         max-width: 450px;
     }
 }
@@ -123,24 +130,24 @@ figure{
 .header__location{
     display: flex;
     justify-content: center;
-    padding-right: 25px;
     background: rgb(234, 234, 234);
     padding: $padding;
     input{
-        background:white;
+        width: 10%;
         background: rgb(234, 234, 234);
         border: 0px;
         font-weight: bold;
-        font-size: 1.3em;
+        font-size: 1.2em;
+        @media #{$medium-down} {
+            width: 50%;
+        }
+        
         &::placeholder{
             color: black;
+            text-align: center;
         }
     }
     .header__location__maps{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-right: 25px;
         font-size: 1.3em;
     }
 }
@@ -165,14 +172,27 @@ aside{
             width: 100%;
         }
         h2{
-            width: 90%;
+            width: 70%;
             font-size: 1.5em;
             margin: auto;
         }
+        h3{
+            width: 90%;
+            margin: auto;
+            font-weight: normal;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 1em;
+        }
+
+
 
     }
 }
-.btn{   
+.restaurant__aside__button{
+    @include btn
+}
+.menu__button {
     @include btn
 }
 
@@ -180,7 +200,7 @@ aside{
     width: 50%;
     @media #{$medium-down} {
         width: 100%;
-    } 
+    }
     h2{
         text-align: start;
         padding-left: $padding;
@@ -215,12 +235,17 @@ aside{
             align-items: center;
             font-size: 30px;
             color: black;
+
         }
         .navigation__list_txt{
             font-weight: bold;
-            font-size: 1.4em;
-            margin-left: 15%;
+            font-size: 1.5em;
+            margin: auto;
             color: black;
+            @media #{$medium-down} {
+                font-size: 1em;
+            }
+
         }
         .number{
             padding: 5px;
@@ -307,7 +332,9 @@ aside{
             transition: transform 300ms; 
         }
         .fa-heart {
-            font-size: 2em;            
+            font-size: 2em;
+            display:flex;
+            justify-content: flex-end;            
             &::before {
                 content: "\f004";
                 transition: color 400ms ease-out;
@@ -343,9 +370,9 @@ aside{
         border-bottom: 2px solid $secondary;
         width: 5%;
         font-weight: normal;
-        margin-left: 20px;
-        margin-top: 50px;
-        margin-bottom:30px;
+        @media #{$medium-down} {
+            margin-left:20px ;
+        }
     }
 
 }
@@ -353,11 +380,16 @@ aside{
 .menu__header{
     display: flex;
     justify-content: space-between;
-    padding-left: $padding;
-    padding-right: $padding;
+    padding-left: $padding +50;
+    padding-right: $padding +50;
+    @media #{$medium-down}{
+        padding-left: $padding;
+        padding-right: $padding;
+
+    }
     .fa-heart {     
         align-self: center;
-        font-size: 2.5em;       
+        font-size: 2em;       
         &::before {
             content: "\f004";
             transition: color 400ms ease-out;
@@ -383,6 +415,7 @@ aside{
         height: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         margin: auto;
         &:nth-child(1){
             animation: itemAppear 1s;
@@ -403,15 +436,13 @@ aside{
     }
 }
 .menu__title {
-    font-size: 2.1em;
+    font-size: 1.8em;
     font-family:Shrikhand,"cursive";
 }
 
 .menu__card{
     width: 300px;
-    height: 60%;
     margin: auto;
-    margin-bottom: 30px;
     background-color:white;
     box-shadow: $shadow;
     border-radius: 15px;
@@ -424,6 +455,7 @@ aside{
     }
     @media #{$medium-down} {
         width: 87%;
+        margin-bottom: 25px;
     }
     .menu__card__price {
         display: flex;
@@ -464,11 +496,11 @@ aside{
         font-size: 1em;
     }
     .menu__card__subdescription{
-        font-size: 0.75em;
+        font-size: 0.9em;
         overflow: hidden;
         text-overflow: ellipsis; 
-        padding-bottom: 20px;
     }
+
 
 }
 
@@ -481,7 +513,7 @@ aside{
     color:white;
     padding-bottom: 20px;
     padding-top: 20px;
-    padding-left: $padding +20px;
+    padding-left: $padding ;
     li{
         list-style: none;
     }
