@@ -69,9 +69,20 @@
     margin-left: 0px;
   }
   40% {
-    margin-left: 35px;
+    margin-left: 40px;
   }
   100%{
-    margin-left: 11150px;
+    margin-left: 1350px;
+  }
+}
+@keyframes jumpphone {
+  0% {
+    margin-left: 0px;
+  }
+  40% {
+    margin-left: 10px;
+  }
+  100%{
+    margin-left: 10100px;
   }
 }
