@@ -269,7 +269,11 @@ aside{
 .section__restaurant{
     h2{
         text-align: start;
-        padding-left: $padding;
+        padding-left: 80px;
+        margin-bottom: 50px;
+        @media #{$medium-down}{
+            padding-left: $padding;
+        } 
     }
 }
 
