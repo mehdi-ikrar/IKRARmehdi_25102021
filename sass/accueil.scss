@@ -12,7 +12,7 @@
     top: 0;
     background-color: rgba(232, 113, 218, 0.50);
     animation: loader 0.01s;
-    animation-delay: 1.6s;
+    animation-delay: 1.2s;
     animation-fill-mode: both;
     z-index: 10000;
     display:flex;
@@ -86,15 +86,11 @@
 
 
 .header__menu{
-    display: flex;
+    display: flex;;
 
     .header__arrow{
         height: 100%;
         color: black;
-        display: none;
-        @media #{$medium-down}{
-            display: flex;
-        }
         .fas{
             font-size: 1.5em;
             height: 100%;
@@ -106,6 +102,7 @@
         }
     }
 }
+
 figure{
     width: 100%;
     margin:0px ;
@@ -116,7 +113,6 @@ figure{
     }
 }
 .header__logo__content{
-    box-shadow: $shadow;
     margin: 0px;
     text-align: center;
     width: 100%;
@@ -526,11 +522,16 @@ aside{
             p{
              margin-top: 0px;
              margin-bottom: 0px;
+             
             }
             .fas{
                 font-size: 10px;
                 padding-right: 5px;
             }
+
+        }
+        a{
+            color: white;
         }
     }
 }
