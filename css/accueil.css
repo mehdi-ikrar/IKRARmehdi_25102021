@@ -361,7 +361,13 @@ aside .aside__discovery h3 {
 \*------------------------------------*/
 .section__restaurant h2 {
   text-align: start;
-  padding-left: 15px;
+  padding-left: 80px;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 1200px) {
+  .section__restaurant h2 {
+    padding-left: 15px;
+  }
 }
 
 .restaurant__card_content {
