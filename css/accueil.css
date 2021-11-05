@@ -68,7 +68,7 @@
     margin-left: 0px;
   }
   40% {
-    margin-left: 10px;
+    margin-left: 35px;
   }
   100% {
     margin-left: 11150px;
@@ -91,7 +91,7 @@ body a:link {
   top: 0;
   background-color: rgba(232, 113, 218, 0.5);
   animation: loader 0.01s;
-  animation-delay: 1.6s;
+  animation-delay: 1.2s;
   animation-fill-mode: both;
   z-index: 10000;
   display: flex;
@@ -157,12 +157,6 @@ body a:link {
 .header__menu .header__arrow {
   height: 100%;
   color: black;
-  display: none;
-}
-@media only screen and (max-width: 1200px) {
-  .header__menu .header__arrow {
-    display: flex;
-  }
 }
 .header__menu .header__arrow .fas {
   font-size: 1.5em;
@@ -185,7 +179,6 @@ figure .figure__img {
 }
 
 .header__logo__content {
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   margin: 0px;
   text-align: center;
   width: 100%;
@@ -634,6 +627,9 @@ aside .aside__discovery h3 {
 .footer .footer__list__container .footer__list__txt .fas {
   font-size: 10px;
   padding-right: 5px;
+}
+.footer .footer__list__container a {
+  color: white;
 }
 
 /*# sourceMappingURL=accueil.css.map */
