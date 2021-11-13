@@ -67,20 +67,25 @@
 @keyframes jump {
   0% {
     margin-left: 0px;
+    
   }
-  40% {
+  50% {
     margin-left: 40px;
+    transform: rotate(360deg);
+    
   }
   100%{
     margin-left: 13050px;
+    
   }
 }
 @keyframes jumpphone {
   0% {
     margin-left: 0px;
   }
-  40% {
+  50% {
     margin-left: 10px;
+    transform: rotate(360deg);
   }
   100%{
     margin-left: 10100px;

@@ -427,7 +427,6 @@ aside{
         &:nth-child(3) {
             animation: itemAppear 2s;
         }
-
         @media #{$medium-down}  {  
             margin: 0px;        
             display: flex;
@@ -511,7 +510,7 @@ aside{
 
 .footer{
     background: rgb(53, 53, 53);
-    color:white;
+    color: $primary ;
     padding-bottom: 20px;
     padding-top: 20px;
     padding-left: $padding ;
