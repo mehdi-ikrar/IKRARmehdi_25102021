@@ -67,8 +67,9 @@
   0% {
     margin-left: 0px;
   }
-  40% {
+  50% {
     margin-left: 40px;
+    transform: rotate(360deg);
   }
   100% {
     margin-left: 13050px;
@@ -78,8 +79,9 @@
   0% {
     margin-left: 0px;
   }
-  40% {
+  50% {
     margin-left: 10px;
+    transform: rotate(360deg);
   }
   100% {
     margin-left: 10100px;
@@ -622,7 +624,7 @@ aside .aside__discovery h3 {
 \*------------------------------------*/
 .footer {
   background: #353535;
-  color: white;
+  color: #f6f6f6;
   padding-bottom: 20px;
   padding-top: 20px;
   padding-left: 15px;
