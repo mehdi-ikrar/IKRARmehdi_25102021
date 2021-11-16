@@ -22,3 +22,15 @@ body{
         transform: scale(1.1);
     } 
 }
+@mixin heart {     
+    font-size: 2em;       
+    &::before {
+        content: "\f004";
+        transition: color 400ms ease-out;
+    }
+    &:hover::before{
+        font-weight: bold;
+        color: rgb(156, 89, 220);
+        cursor: pointer;
+    }
+}

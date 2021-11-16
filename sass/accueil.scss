@@ -335,15 +335,9 @@ aside{
         .fa-heart {
             font-size: 2em;
             display:flex;
-            justify-content: flex-end;            
-            &::before {
-                content: "\f004";
-                transition: color 400ms ease-out;
-            }
-            &:hover::before{
-                font-weight: bold;
-                color: rgb(156, 89, 220);
-            }
+            justify-content: flex-end; 
+            @include heart           
+
         }
     }   
 
@@ -390,16 +384,7 @@ aside{
     }
     .fa-heart {     
         align-self: center;
-        font-size: 2em;       
-        &::before {
-            content: "\f004";
-            transition: color 400ms ease-out;
-        }
-        &:hover::before{
-            font-weight: bold;
-            color: rgb(156, 89, 220);
-            cursor: pointer;
-        }
+        @include heart
     }
 }
 
