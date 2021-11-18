@@ -3,8 +3,16 @@
         width: 0px;
     }
     100% {
-        width: 28.5px;
+        width: 78px;
     }
+}
+@keyframes back {
+  0% {
+      width: 78px;
+  }
+  100% {
+      width: 0px;
+  }
 }
 @keyframes slide {
     0% {
@@ -17,11 +25,10 @@
 @keyframes rotation {
     0%{
         transform: rotate(90deg);
-        opacity: 0;
     }
-    20%{
-        opacity: 1;
-    }   
+    50%{
+      transform: rotate(70deg);
+    }
     100%{
         transform: rotate(0deg) ;
     }
@@ -89,5 +96,16 @@
   }
   100%{
     margin-left: 10100px;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

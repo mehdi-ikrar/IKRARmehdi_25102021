@@ -4,6 +4,7 @@
 @import "mixins.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 
+
 .loader {
     position: fixed;
     height: 100%;
@@ -282,6 +283,7 @@ aside{
     display: flex;
     flex-wrap: wrap;
 
+
 }
 
 
@@ -292,9 +294,7 @@ aside{
     height: 250px;
     border-radius: 10px;
     box-shadow: $shadow;
-    &:hover > .menu__card__news{
-        animation: bounce 1s;
-    } 
+
     @media #{$medium-down} {
         width: 90%;
     }
@@ -329,8 +329,7 @@ aside{
             margin-bottom: 140px;
             background: rgb(153, 226, 208);
             color: rgb(0, 135, 102);
-            transform: scale(1);
-            transition: transform 300ms; 
+
         }
         .fa-heart {
             font-size: 2em;
@@ -403,6 +402,7 @@ aside{
         flex-direction: column;
         justify-content: space-between;
         margin: auto;
+        width: 30%;
         &:nth-child(1){
             animation: itemAppear 1s;
         }
@@ -417,6 +417,7 @@ aside{
             display: flex;
             flex-direction: column;
             margin-top: 0px;
+            width: 100%;
         }
     }
 }
@@ -426,7 +427,7 @@ aside{
 }
 
 .menu__card{
-    width: 300px;
+    width: 90%;
     margin: auto;
     background-color:white;
     box-shadow: $shadow;
@@ -435,8 +436,13 @@ aside{
     justify-content: space-between;
     color: black;
     padding-left: 15px;
+    overflow: hidden;
     &:hover > .pricecheck > .menu__card__check {
         display: flex;
+        animation: appear 0.4s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.45,.09,.65,1);
+        
     }
     @media #{$medium-down} {
         width: 87%;
@@ -450,30 +456,37 @@ aside{
         margin: 5px;
         margin-top: 50px;
         padding-right: 5px;
+        
+        
     }
 }
 .pricecheck{
     display: flex;
+    
 }
+
 .menu__card__check{
     background-color: $secondary;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     display: flex;
     align-items: center;
-    padding: 25px;
-    animation: appear 0.5s ;
     display: none;
+    overflow: hidden;
+    
     .fa-check-circle {
         color: white;
         font-size: 1.8em;
-        animation:  rotation 0.5s ;
+        animation: rotation 0.4s ;
+        margin: 25px;
+        
     }
 }
 .menu__card__description{
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: nowrap;
+
     .menu__card__titledescription{
         overflow: hidden;
         text-overflow: ellipsis; 
@@ -517,7 +530,6 @@ aside{
                 font-size: 10px;
                 padding-right: 5px;
             }
-
         }
         a{
             color: white;
