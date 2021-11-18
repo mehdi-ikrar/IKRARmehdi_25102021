@@ -188,10 +188,12 @@ aside{
     }
 }
 .restaurant__aside__button{
-    @include btn
+    @include btn;
+    width: 55%;
 }
 .menu__button {
-    @include btn
+    @include btn;
+    width:40%;
 }
 
 .navigation{
@@ -271,7 +273,7 @@ aside{
 .section__restaurant{
     h2{
         text-align: start;
-        padding-left: 80px;
+        padding-left: 40px;
         margin-bottom: 50px;
         @media #{$medium-down}{
             padding-left: $padding;
@@ -290,11 +292,10 @@ aside{
 .restaurant__card{
     margin: auto;
     margin-bottom: 35px;
-    width: 40%;
+    width: 20%;
     height: 250px;
     border-radius: 10px;
     box-shadow: $shadow;
-
     @media #{$medium-down} {
         width: 90%;
     }
@@ -364,6 +365,7 @@ aside{
         border-bottom: 2px solid $secondary;
         width: 5%;
         font-weight: normal;
+        margin-left:20px ;
         @media #{$medium-down} {
             margin-left:20px ;
         }
