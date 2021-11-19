@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 @keyframes appear {
-  0% {
+  from {
     width: 0px;
   }
-  100% {
+  to {
     width: 78px;
   }
 }
@@ -109,6 +109,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Roboto", "Sans serif";
+  margin: auto;
 }
 body a:link {
   text-decoration: none;
@@ -178,6 +179,11 @@ body a:link {
 }
 .loader__item--7 {
   background-color: #9c59dc;
+}
+
+.main {
+  max-width: 1440px;
+  margin: auto;
 }
 
 /*------------------------------------*\
@@ -250,20 +256,12 @@ figure .figure__img {
 /*------------------------------------*\
   #ASIDE
 \*------------------------------------*/
-aside {
-  display: flex;
-}
-@media only screen and (max-width: 1200px) {
-  aside {
-    flex-direction: column;
-  }
-}
 aside .aside__discovery {
-  width: 50%;
-  background: #f6f6f6;
+  width: 100%;
   padding-top: 50px;
   padding-bottom: 80px;
   text-align: center;
+  background: #f6f6f6;
 }
 @media only screen and (max-width: 1200px) {
   aside .aside__discovery {
@@ -290,11 +288,11 @@ aside .aside__discovery h3 {
   border-radius: 50px;
   text-align: center;
   margin: auto;
+  width: 250px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   background: linear-gradient(#9c59dc, #e871da 100%);
   transform: scale(1);
   transition: transform 400ms;
-  width: 55%;
 }
 .restaurant__aside__button:hover {
   transform: scale(1.1);
@@ -306,42 +304,42 @@ aside .aside__discovery h3 {
   border-radius: 50px;
   text-align: center;
   margin: auto;
+  width: 250px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   background: linear-gradient(#9c59dc, #e871da 100%);
   transform: scale(1);
   transition: transform 400ms;
-  width: 40%;
 }
 .menu__button:hover {
   transform: scale(1.1);
 }
 
 .navigation {
-  width: 50%;
-}
-@media only screen and (max-width: 1200px) {
-  .navigation {
-    width: 100%;
-  }
+  max-width: 1440px;
+  margin: auto;
 }
 .navigation h2 {
   text-align: start;
-  padding-left: 15px;
+  padding-left: 65px;
 }
 
 .navigation__content {
   display: flex;
-  flex-direction: column;
+}
+@media only screen and (max-width: 1200px) {
+  .navigation__content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .navigation__content .navigation__liste {
   background-color: #f6f6f6;
   display: flex;
   border-radius: 20px;
-  width: 90%;
   margin: auto;
   margin-bottom: 20px;
-  margin-left: 35px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  width: 25%;
 }
 .navigation__content .navigation__liste:hover {
   background: rgba(147, 86, 200, 0.2);
@@ -364,7 +362,7 @@ aside .aside__discovery h3 {
 }
 .navigation__content .navigation__liste .navigation__list_txt {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: auto;
   color: black;
 }
@@ -391,9 +389,12 @@ aside .aside__discovery h3 {
 /*------------------------------------*\
   #SECTION RESTAURANT
 \*------------------------------------*/
+.section__restaurant {
+  max-width: 1440px;
+  margin: auto;
+}
 .section__restaurant h2 {
-  text-align: start;
-  padding-left: 40px;
+  padding-left: 65px;
   margin-bottom: 50px;
 }
 @media only screen and (max-width: 1200px) {
@@ -410,7 +411,7 @@ aside .aside__discovery h3 {
 .restaurant__card {
   margin: auto;
   margin-bottom: 35px;
-  width: 20%;
+  width: 40%;
   height: 250px;
   border-radius: 10px;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
@@ -477,6 +478,7 @@ aside .aside__discovery h3 {
   position: relative;
   bottom: 80px;
   width: 80%;
+  max-width: 1280px;
   margin: auto;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -549,13 +551,16 @@ aside .aside__discovery h3 {
   width: 30%;
 }
 .menu__card__container .menu__card__grope:nth-child(1) {
-  animation: itemAppear 1s;
+  animation: itemAppear 0.8s;
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.75, 0.92);
 }
 .menu__card__container .menu__card__grope:nth-child(2) {
-  animation: itemAppear 1.5s;
+  animation: itemAppear 1.3s;
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.75, 0.92);
 }
 .menu__card__container .menu__card__grope:nth-child(3) {
-  animation: itemAppear 2s;
+  animation: itemAppear 1.8s;
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.75, 0.92);
 }
 @media only screen and (max-width: 1200px) {
   .menu__card__container .menu__card__grope {
@@ -586,8 +591,7 @@ aside .aside__discovery h3 {
 }
 .menu__card:hover > .pricecheck > .menu__card__check {
   display: flex;
-  animation: appear 0.4s;
-  animation-fill-mode: both;
+  animation: appear 0.4s ease-in-out;
   animation-timing-function: cubic-bezier(0.45, 0.09, 0.65, 1);
 }
 @media only screen and (max-width: 1200px) {
@@ -614,9 +618,8 @@ aside .aside__discovery h3 {
   background-color: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  display: flex;
-  align-items: center;
   display: none;
+  align-items: center;
   overflow: hidden;
 }
 .menu__card__check .fa-check-circle {
