@@ -2,6 +2,7 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: "Roboto", "Sans serif";
+    margin: auto;
     a:link { 
         text-decoration:none; 
         } 
@@ -13,6 +14,7 @@ body{
     border-radius: 50px;
     text-align: center;
     margin: auto;
+    width: 250px;
     box-shadow: $shadow;
     background: $pink-btn;
     transform: scale(1);

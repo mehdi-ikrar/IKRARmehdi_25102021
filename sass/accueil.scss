@@ -77,11 +77,13 @@
         background-color: rgb(156, 89, 220);
 
       }
-    }
-  
-    
+    }     
 }
 
+.main{
+    max-width: 1440px;
+    margin: auto;
+}
 /*------------------------------------*\
   #HEADER
 \*------------------------------------*/
@@ -156,18 +158,16 @@ figure{
   #ASIDE
 \*------------------------------------*/
 aside{
-    display: flex;
-    @media #{$medium-down} {
-        flex-direction: column;
-    }
+    
     .aside__discovery{
-        width: 50%;
-        background: $primary;
+        width: 100%;
         padding-top: 50px;
         padding-bottom: 80px;
         text-align: center;
+        background: $primary;
         @media #{$medium-down} {
             width: 100%;
+            
         }
         h2{
             width: 70%;
@@ -189,36 +189,36 @@ aside{
 }
 .restaurant__aside__button{
     @include btn;
-    width: 55%;
 }
 .menu__button {
     @include btn;
-    width:40%;
+
 }
 
 .navigation{
-    width: 50%;
-    @media #{$medium-down} {
-        width: 100%;
-    }
+    max-width: $max-width;
+    margin: auto;
     h2{
         text-align: start;
-        padding-left: $padding;
+        padding-left: $padding + 50;
     }
 
 }
 .navigation__content{
     display: flex;
-    flex-direction: column;
+    
+    @media #{$medium-down}{
+        display: flex;
+        flex-direction: column;
+    }
     .navigation__liste{
         background-color: $primary;
         display: flex;
         border-radius: 20px;
-        width: 90%;
         margin: auto;
         margin-bottom: 20px;
-        margin-left: 35px;
         box-shadow: $shadow;
+        width: 25%;
         &:hover{
             background: rgb(147, 86, 200, 20%);
         }
@@ -239,7 +239,7 @@ aside{
         }
         .navigation__list_txt{
             font-weight: bold;
-            font-size: 1.5em;
+            font-size: 1.3em;
             margin: auto;
             color: black;
             @media #{$medium-down} {
@@ -271,9 +271,11 @@ aside{
   #SECTION RESTAURANT
 \*------------------------------------*/
 .section__restaurant{
+    max-width: $max-width;
+    margin: auto;
+
     h2{
-        text-align: start;
-        padding-left: 40px;
+        padding-left: 65px;
         margin-bottom: 50px;
         @media #{$medium-down}{
             padding-left: $padding;
@@ -292,7 +294,7 @@ aside{
 .restaurant__card{
     margin: auto;
     margin-bottom: 35px;
-    width: 20%;
+    width: 40%;
     height: 250px;
     border-radius: 10px;
     box-shadow: $shadow;
@@ -351,6 +353,7 @@ aside{
     position: relative;
     bottom: 80px;
     width: 80%;
+    max-width: 1280px;
     margin: auto;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -406,13 +409,16 @@ aside{
         margin: auto;
         width: 30%;
         &:nth-child(1){
-            animation: itemAppear 1s;
+            animation: itemAppear 0.8s;
+            animation-timing-function: cubic-bezier(.5,1.58,.75,.92);
         }
         &:nth-child(2){
-            animation: itemAppear 1.5s;
+            animation: itemAppear 1.3s;
+            animation-timing-function: cubic-bezier(.5,1.58,.75,.92);
         }
         &:nth-child(3) {
-            animation: itemAppear 2s;
+            animation: itemAppear 1.8s ;
+            animation-timing-function: cubic-bezier(.5,1.58,.75,.92);
         }
         @media #{$medium-down}  {  
             margin: 0px;        
@@ -441,8 +447,7 @@ aside{
     overflow: hidden;
     &:hover > .pricecheck > .menu__card__check {
         display: flex;
-        animation: appear 0.4s;
-        animation-fill-mode: both;
+        animation: appear 0.4s ease-in-out;
         animation-timing-function: cubic-bezier(.45,.09,.65,1);
         
     }
@@ -458,24 +463,19 @@ aside{
         margin: 5px;
         margin-top: 50px;
         padding-right: 5px;
-        
-        
     }
 }
 .pricecheck{
     display: flex;
-    
 }
 
 .menu__card__check{
     background-color: $secondary;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    display: flex;
-    align-items: center;
     display: none;
+    align-items: center;
     overflow: hidden;
-    
     .fa-check-circle {
         color: white;
         font-size: 1.8em;
@@ -488,7 +488,6 @@ aside{
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: nowrap;
-
     .menu__card__titledescription{
         overflow: hidden;
         text-overflow: ellipsis; 
@@ -500,8 +499,6 @@ aside{
         overflow: hidden;
         text-overflow: ellipsis; 
     }
-
-
 }
 
 /*------------------------------------*\
